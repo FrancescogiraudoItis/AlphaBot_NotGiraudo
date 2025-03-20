@@ -1,0 +1,194 @@
+/* Reset di base */
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Sfondo nero */
+body {
+  background: #000000;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Elementi di sfondo decorativi */
+.background {
+  width: 450px;
+  height: 550px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  filter: blur(50px);
+  opacity: 0.4;
+}
+
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.shape:first-child {
+  background: linear-gradient(45deg, #0072ff, #00c6ff);
+  left: -80px;
+  top: -80px;
+}
+
+.shape:last-child {
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  right: -30px;
+  bottom: -80px;
+}
+
+/* Form con effetto vetro smerigliato */
+form {
+  height: 550px;
+  width: 420px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  padding: 50px 40px;
+  text-align: center;
+}
+
+/* Testo */
+form * {
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+
+/* Titolo */
+form h3 {
+  font-size: 34px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* Etichette */
+label {
+  display: block;
+  margin-top: 25px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Input con bordo neon */
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid transparent;
+  border-radius: 6px;
+  padding: 0 15px;
+  margin-top: 8px;
+  font-size: 15px;
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Effetto neon al focus sugli input */
+input:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.8);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Placeholder */
+::placeholder {
+  color: #d3d3d3;
+}
+
+/* Pulsanti con effetto neon */
+button {
+  margin-top: 40px;
+  width: 100%;
+  background: linear-gradient(45deg, #0072ff, #00c6ff);
+  color: #ffffff;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 198, 255, 0.6);
+}
+
+/* Effetto hover sui pulsanti */
+button:hover {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 198, 255, 1);
+}
+
+/* Pulsanti social */
+.social {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.social div {
+  width: 48%;
+  border-radius: 6px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease-in-out;
+}
+
+.social div:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.05);
+}
+
+/* Modifica la larghezza del pulsante "Crea Account" per farlo uguale al pulsante di login */
+.create-account {
+  position: absolute;
+  bottom: 15px;
+  left: 38%;
+  /* right: 50%; */
+  /* transform: translateX(-50%); */
+  width: 100%; /* Questo farà sì che il pulsante occupi tutta la larghezza disponibile del form */
+  max-width: 360px; /* Imposta una larghezza massima, uguale a quella del pulsante di login */
+  background: linear-gradient(45deg, #ff416c, #ff4b2b); /* Rosso sfumato */
+  color: #ffffff;
+  font-size: 18px;
+  padding: 15px 0;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+  box-shadow: 0 0 10px rgba(255, 75, 43, 0.6); /* Ombra rossa di base */
+}
+
+/* Effetto hover per "Crea Account" */
+.create-account:hover {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Rosso sfumato invertito */
+  /* transform: scale(1.05); */
+  box-shadow: 0 0 15px rgba(255, 75, 43, 1); /* Ombra più intensa */
+}
+
+/* Effetto focus sugli input (per mantenere lo stesso effetto dei pulsanti neon) */
+.create-account:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 75, 43, 0.8);
+}
