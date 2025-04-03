@@ -1,0 +1,194 @@
+/* Minimalist Red & White Theme */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  align-items: center;
+  color: black;
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  background-color: red;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.main-content, .login-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+h1, h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: red;
+  font-size: 28px;
+}
+
+/* Control Panel */
+.control-panel {
+  background: white;
+  padding: 20px;
+  border: 2px solid red;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.btn {
+  padding: 15px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  border: 2px solid red;
+  background-color: white;
+  color: red;
+  border-radius: 5px;
+  width: 120px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: red;
+  color: white;
+}
+
+#command-display {
+  font-size: 20px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: red;
+}
+
+/* Form Styles */
+form {
+  background-color: white;
+  padding: 30px;
+  border: 2px solid red;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 5px;
+  padding: 0 15px;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+input:focus {
+  outline: none;
+  background-color: #ffe6e6;
+}
+
+button[type="submit"] {
+  margin-top: 30px;
+  width: 100%;
+  background-color: red;
+  color: white;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: darkred;
+}
+
+/* Footer Styles */
+footer {
+  width: 100%;
+  margin-top: auto;
+  padding: 15px 0;
+  text-align: center;
+  background-color: white;
+  color: black;
+}
+
+.logout-button {
+  padding: 12px 30px;
+  font-size: 16px;
+  background-color: white;
+  color: red;
+  border: 2px solid red;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.logout-button:hover {
+  background-color: red;
+  color: white;
+}
+
+/* Flash Messages */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.success {
+  color: green;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* Button Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+button, .btn {
+  animation: fadeIn 0.5s ease-in-out;
+}

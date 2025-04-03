@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+ 
+<head> 
+  <title>Home</title> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./static/style.css">
+</head> 
+ 
+<body> 
+  <header>
+    <h3 class="welcome-message">Benvenuto, {{ username }}!</h3>
+  </header>
+  
+  <div class="main-content">
+    <h1>AlphaBot Control Panel</h1>
+    <div class="control-panel"> 
+      <button class="btn" onclick="sendCommand('forward')">⬆ Forward</button><br> 
+      <button class="btn" onclick="sendCommand('left')">⬅ Left</button> 
+      <button class="btn" onclick="sendCommand('stop')">🛑 Stop</button> 
+      <button class="btn" onclick="sendCommand('right')">➡ Right</button><br> 
+      <button class="btn" onclick="sendCommand('backward')">⬇ Backward</button> 
+      <div id="command-display">Last Command: None</div> 
+    </div>
+  </div>
+  
+  <footer>
+    <div class="logout-section"> 
+      <form action="{{ url_for('logout') }}" method="get"> 
+        <button type="submit" class="logout-button">Logout</button> 
+      </form> 
+    </div>
+  </footer>
+   
+  <script> 
+    function sendCommand(direction) { 
+      fetch('/move', { 
+        method: 'POST', 
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, 
+        body: 'direction=' + direction 
+      }) 
+      .then(response => response.text()) 
+      .then(data => { 
+        document.getElementById('command-display').innerText = 'Last Command: ' + data; 
+      }); 
+    } 
+  </script> 
+</body> 
+ 
+</html>
